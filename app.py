@@ -33,7 +33,7 @@ def display_recommendation_comparison():
 
 def display_positive_feedback_distribution():
     st.header("Positive Feedback Count Distribution")
-    fig = px.scatter(df, x='Positive Feedback Count', y='Age', title='Distribution of Positive Feedback Count', trendline='ols')
+    fig = px.scatter(df, x='Positive Feedback Count', y='Age', title='Distribution of Positive Feedback Count')
     st.plotly_chart(fig)
 
 # Main function to run the app
