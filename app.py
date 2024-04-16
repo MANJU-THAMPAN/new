@@ -28,8 +28,11 @@ def display_rating_distribution():
 
 def display_recommendation_comparison():
     st.header("Recommended vs Not Recommended Products")
-    fig = px.bar(df['Recommended IND'].value_counts().reset_index(), x='index', y='Recommended IND', labels={'index': 'Recommended', 'Recommended IND': 'Count'}, title='Count of Recommended vs Not Recommended Products')
+    rec_counts = df['Recommended IND'].value_counts().reset_index()
+    rec_counts.columns = ['Recommended', 'Count']
+    fig = px.line(rec_counts, x='Recommended', y='Count', title='Count of Recommended vs Not Recommended Products')
     st.plotly_chart(fig)
+
 
 def display_positive_feedback_distribution():
     st.header("Positive Feedback Count Distribution")
